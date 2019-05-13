@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+ * Data structure: Binary Search Tree
+ * Time Complexity: Average - O(log(n)) | Worst - O(n)
+ */
+
 class Node {
     constructor(data, left, right) {
         this.data = data;
