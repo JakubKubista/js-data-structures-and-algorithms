@@ -31,7 +31,7 @@ class BinarySearchTree  {
      * @param {Node} root
      * @param {Node} left
      */
-    checkLeft(root, left) {
+    leftIsGreater(root, left) {
         return (!this.isEmpty(left) && root.data < left.data);
     }
 
@@ -40,7 +40,7 @@ class BinarySearchTree  {
      * @param {Node} root
      * @param {Node} right
      */
-    checkRight(root, right) {
+    rightIsSmaller(root, right) {
         return (!this.isEmpty(right) && root.data >= right.data);
     }
 
@@ -57,12 +57,12 @@ class BinarySearchTree  {
         }
 
         // Left node's data should be less than root's data.
-        if (this.checkLeft(root, left)) {
+        if (this.leftIsGreater(root, left)) {
             return false;
         }
 
         // Right node's data should be greater than root's data.
-        if (this.checkRight(root, right)) {
+        if (this.rightIsSmaller(root, right)) {
             return false;
         }
 
