@@ -21,36 +21,51 @@ class BinarySearchTree  {
         if (node === undefined || node === null) {
             return true;
         }
+        return false;
+    }
+
+    /**
+     * If left node exist then check it has correct data.
+     * @param {Node} root
+     * @param {Node} left
+     */
+    checkLeft(root, left) {
+        if (this.isEmpty(left) && root.data < left.data) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * If right node exist then check it has correct data.
+     * @param {Node} root
+     * @param {Node} right
+     */
+    checkRight(root, right) {
+        if (this.isEmpty(right) && root.data >= right.data) {
+            return false;
+        }
+        return true;
     }
 
     /**
      * Returns true if the given tree is a binary search tree.
      * @param {Node} root
+     * @param {Node} left
+     * @param {Node} right
      */
-    isBST(root) {
-        return isBSTUtil(root, MIN = -4294967296, MAX = 4294967296)
-    }
-
-    /**
-     * Returns true if the given tree is a BST
-     * and its values are >= min and <= max.
-     * @param {Node} node
-     * @param {number} min
-     * @param {number} max
-     */
-    isBSTUtil(node, min, max)
-    {
-        // An empty tree is BST
+    isBST(root, left = null, right = null) {
+        // An empty tree is BST.
         isEmpty(node)
 
-        // Node violates the min/max constraints is not BST
-        if (node.data < min || node.data > max) {
-            return false;
-        }
+        // Left node's data should be less than root's data.
+        checkLeft(root, left);
 
-        // Check the subtrees recursively the min/max constraints
-        // Allow only distinct values
-        return (isBSTUtil(node.left, min, node.data-1) &&
-                isBSTUtil(node.right, node.data+1, max));
+        // Right node's data should be greater than root's data.
+        checkRight(root, right);
+
+        // Check recursively for every node.
+        return isBST(root.left, left, root) &&
+            isBST(root.right, root, right);
     }
 }
