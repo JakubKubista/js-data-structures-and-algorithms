@@ -18,10 +18,7 @@ class BinarySearchTree  {
      * @param {Node} root
      */
     isEmpty(node) {
-        if (node === undefined || node === null) {
-            return true;
-        }
-        return false;
+        return (node === undefined || node === null);
     }
 
     /**
@@ -30,10 +27,7 @@ class BinarySearchTree  {
      * @param {Node} left
      */
     checkLeft(root, left) {
-        if (this.isEmpty(left) && root.data < left.data) {
-            return false;
-        }
-        return true;
+        return (!this.isEmpty(left) && root.data < left.data);
     }
 
     /**
@@ -42,10 +36,7 @@ class BinarySearchTree  {
      * @param {Node} right
      */
     checkRight(root, right) {
-        if (this.isEmpty(right) && root.data >= right.data) {
-            return false;
-        }
-        return true;
+        return (!this.isEmpty(right) && root.data >= right.data);
     }
 
     /**
@@ -56,16 +47,37 @@ class BinarySearchTree  {
      */
     isBST(root, left = null, right = null) {
         // An empty tree is BST.
-        isEmpty(node)
+        if (this.isEmpty(root)) {
+            return true;
+        }
 
         // Left node's data should be less than root's data.
-        checkLeft(root, left);
+        if (this.checkLeft(root, left)) {
+            return false;
+        }
 
         // Right node's data should be greater than root's data.
-        checkRight(root, right);
+        if (this.checkRight(root, right)) {
+            return false;
+        }
 
         // Check recursively for every node.
-        return isBST(root.left, left, root) &&
-            isBST(root.right, root, right);
+        return this.isBST(root.left, left, root) &&
+            this.isBST(root.right, root, right);
     }
 }
+function testBST() {
+    let root = new Node(10);
+
+    root.left = new Node(7);
+    root.left.left = new Node(3);
+    root.left.right = new Node(8);
+
+    root.right = new Node(15);
+    root.right.left = new Node(9); // switch into 12 and it will works
+    root.right.right = new Node(17);
+
+    let BST = new BinarySearchTree(root)
+    console.log(BST.isBST(BST.root));
+}
+testBST();
