@@ -2,6 +2,7 @@
 
 /**
  * Returns reversed string
+ * Time Complexity: O(n)
  * @param {string} str
  */
 function reverseString(str) {
@@ -13,6 +14,7 @@ function reverseString(str) {
 
 /**
  * Returns reversed individuals words
+ * Time Complexity: O(n)
  * @param {string} str
  */
 function reverseWords(str) {
