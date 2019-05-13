@@ -18,7 +18,7 @@ class BinarySearchTree  {
      * @param {Node} root
      */
     isEmpty(node) {
-        if (node === null) {
+        if (node === undefined || node === null) {
             return true;
         }
     }
