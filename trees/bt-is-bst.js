@@ -20,8 +20,8 @@ class BinarySearchTree {
     }
 
     /**
-     * Returns true if the given tree is empty.
-     * @param {Node} root
+     * Returns true if the given node is empty.
+     * @param {Node} node
      */
     isEmpty(node) {
         return (node === undefined || node === null);
@@ -72,6 +72,7 @@ class BinarySearchTree {
             this.isBST(root.right, root, right);
     }
 }
+
 function testBST() {
     let root = new Node(10);
 
