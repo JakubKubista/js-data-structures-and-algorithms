@@ -47,3 +47,17 @@ class Stack {
         return temp.value;
     }
 }
+
+function test() {
+    let stack = new Stack();
+
+    console.log("new stack [1, 2, 3] and than pop 4x times");
+    console.log(stack.push(1));
+    console.log(stack.push(2));
+    console.log(stack.push(3));
+    console.log(stack.pop());
+    console.log(stack.pop());
+    console.log(stack.pop());
+    console.log(stack.pop());
+}
+test()
