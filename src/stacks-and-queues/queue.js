@@ -6,7 +6,6 @@
  * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/lecture/8344072#content
  */
 
-
 class Node {
     constructor(value){
         this.value = value;
