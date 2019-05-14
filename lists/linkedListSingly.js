@@ -2,7 +2,7 @@
 
 /**
  * Basic operations with singly linked list.
- * Time Complexity: O(n)
+ * Time Complexity: Access/Seach - O(n) | Insertion/Deletion - O(1)
  * Source: https://codeburst.io/linked-lists-in-javascript-es6-code-part-1-6dd349c3dcc3
  */
 
