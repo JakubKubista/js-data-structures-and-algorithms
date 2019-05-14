@@ -27,7 +27,6 @@ class LinkedList {
     }
 
     clone() {
-        let cp = this.head;
         let originalCurr = this.head;
         let clonedCurr = null;
 
