@@ -1,3 +1,5 @@
+"use strict"
+
 /**
  * Tree Traversal: Depth First InOrder of Binary Search Tree
  * Time Complexity: binary - O(n) | others - O(n + m)

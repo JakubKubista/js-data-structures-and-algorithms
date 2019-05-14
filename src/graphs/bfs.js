@@ -1,3 +1,5 @@
+"use strict"
+
 /**
  * Graph Traversal BFS
  * Time Complexity: O(V+E)

@@ -1,3 +1,5 @@
+"use strict"
+
 /**
  * Hash Table
  * Time Complexity: O(1)

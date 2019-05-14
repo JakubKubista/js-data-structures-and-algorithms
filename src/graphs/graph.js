@@ -1,3 +1,5 @@
+"use strict"
+
 /**
  * Graph
  * Time Complexity: O(V+E)
