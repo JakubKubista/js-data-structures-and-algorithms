@@ -20,3 +20,10 @@ function reverseString(str) {
 function reverseWords(str) {
     return str.split(" ").reverse().join(" ");
 }
+
+
+function testReverse() {
+    console.log("Input data: Some sample data")
+    console.log(reverseString("Some sample data"));
+    console.log(reverseWords("Some sample data"));
+}
