@@ -4,24 +4,26 @@
  * Search an element in a sorted and rotated array.
  * Time Complexity: O(log n)
  * Source: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
- * @param {array} arr
+ */
+
+/**
+ * Get middle pivot.
  * @param {number} low
  * @param {number} high
- * @param {number} key
- * @return {number} index of element.
+ * @return {number} pivot
  */
-function search(arr, low, high, key) {
-    // Key is not present.
-    if (low > high) {
-        return -1;
-    }
+function getMiddlePivot(low, high) {
+    return Math.floor((low + high) / 2);
+}
 
-    let mid = Math.floor((low + high) / 2);
-    if (arr[mid] === key) {
-        return mid;
-    }
-
-    // If arr[low..mid] is sorted
+/**
+ * Choose the sorted half.
+ * @param {object} payload
+ * @return {number} sorted half
+ */
+function getSortedHalf(payload) {
+    let {arr, low, mid, high, key} = payload;
+    // If arr[low..mid] is sorted.
     if (arr[low] <= arr[mid]) {
         // Check if key is in half or other half.
         if (key >= arr[low] && key <= arr[mid]) {
@@ -31,12 +33,35 @@ function search(arr, low, high, key) {
         return search(arr, mid+1, high, key);
     }
 
-    // If arr[low..mid] is not sorted,
-    // then arr[mid..high] must be sorted.
+    // arr[low..mid] is not sorted so
+    // arr[mid..high] will be sorted.
     if (key >= arr[mid] && key <= arr[high]) {
         return search(arr, mid+1, high, key);
     }
     return search(arr, low, mid-1, key);
+}
+
+/** The main searching engine.
+* @param {array} arr
+* @param {number} low
+* @param {number} high
+* @param {number} key
+* @return {number} index of element
+*/
+function search(arr, low, high, key) {
+    // Key is not present.
+    if (low > high) {
+        return -1;
+    }
+
+    let mid = getMiddlePivot(low, high);
+    if (arr[mid] === key) {
+        return mid;
+    }
+
+    // Get the sorted half and continue.
+    let payload = { arr, low, mid, high, key };
+    return getSortedHalf(payload);
 }
 
 function test(expected = 2, key = 6) {
@@ -47,17 +72,3 @@ function test(expected = 2, key = 6) {
     console.log(searched === expected);
 }
 test();
-
-/**
- * Algorithm:
- * 1) Find middle point mid = (l + h)/2
- * 2) If key is present at middle point, return mid.
- * 3) Else If arr[l..mid] is sorted
-    a) If key to be searched lies in range from arr[l]
-       to arr[mid], recur for arr[l..mid].
-    b) Else recur for arr[mid+1..h]
- * 4) Else (arr[mid+1..h] must be sorted)
-    a) If key to be searched lies in range from arr[mid+1]
-       to arr[h], recur for arr[mid+1..h].
-    b) Else recur for arr[l..mid]
- */
