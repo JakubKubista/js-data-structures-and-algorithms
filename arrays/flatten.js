@@ -16,10 +16,16 @@ function flatten(arr, depth) {
     return arr.flat(depth);
 }
 
+/**
+ * Returns flatten array
+ * @param {array} oldArr
+ */
 function flatten(oldArr) {
     var newArr = []
     for (var i = 0; i < oldArr.length; i++) {
+        // check if item is nested array
         if (Array.isArray(oldArr[i])) {
+            // recursivly concat to newArr
             newArr = newArr.concat(flatten(oldArr[i]))
         } else {
             newArr.push(oldArr[i])
@@ -28,8 +34,12 @@ function flatten(oldArr) {
     return newArr;
 }
 
-function flattenDeep(arr1) {
-    return arr1.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+/**
+ * Returns flatten array
+ * @param {array} arr
+ */
+function flattenDeep(arr) {
+    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }
 
 function test() {
