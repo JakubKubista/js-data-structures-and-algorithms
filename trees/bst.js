@@ -3,6 +3,7 @@
 /**
  * Data structure: Binary Search Tree
  * Time Complexity: Average - O(log(n)) | Worst - O(n)
+ * Source: https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
  */
 
 class Node {

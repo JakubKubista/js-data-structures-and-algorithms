@@ -5,6 +5,7 @@
  * Fast way to implement, but not the best way.
  * Better way is to use BST or Hash table
  * Time Complexity: O(n*n)
+ * Source: https://www.geeksforgeeks.org/remove-duplicates-from-a-given-string/
  * @param {string} str
  */
 function removeDuplicates(str) {
