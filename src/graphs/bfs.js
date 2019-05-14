@@ -1,5 +1,5 @@
 /**
- * Graph BFS
+ * Graph Traversal BFS
  * Time Complexity: O(V+E)
  * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/lecture/8344072#content
  */
@@ -8,13 +8,16 @@ class Graph{
     constructor(){
         this.adjacencyList = {};
     }
+
     addVertex(vertex){
         if(!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
     }
+
     addEdge(v1,v2){
         this.adjacencyList[v1].push(v2);
         this.adjacencyList[v2].push(v1);
     }
+
     removeEdge(vertex1,vertex2){
         this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
             v => v !== vertex2
@@ -23,6 +26,7 @@ class Graph{
             v => v !== vertex1
         );
     }
+
     removeVertex(vertex){
         while(this.adjacencyList[vertex].length){
             const adjacentVertex = this.adjacencyList[vertex].pop();
@@ -30,6 +34,7 @@ class Graph{
         }
         delete this.adjacencyList[vertex]
     }
+
     depthFirstRecursive(start){
         const result = [];
         const visited = {};
@@ -48,6 +53,7 @@ class Graph{
 
         return result;
     }
+
     depthFirstIterative(start){
         const stack = [start];
         const result = [];
@@ -63,11 +69,12 @@ class Graph{
                if(!visited[neighbor]){
                    visited[neighbor] = true;
                    stack.push(neighbor)
-               } 
+               }
             });
         }
         return result;
     }
+
     breadthFirst(start){
         const queue = [start];
         const result = [];
@@ -78,7 +85,7 @@ class Graph{
         while(queue.length){
             currentVertex = queue.shift();
             result.push(currentVertex);
-           
+
 
             this.adjacencyList[currentVertex].forEach(neighbor => {
                 if(!visited[neighbor]){
@@ -92,24 +99,24 @@ class Graph{
 }
 
 
+function test() {
+    let graph = new Graph();
 
-let g = new Graph();
+    graph.addVertex('A');
+    graph.addVertex('B');
+    graph.addVertex('C');
+    graph.addVertex('D');
+    graph.addVertex('E');
+    graph.addVertex('F');
 
-g.addVertex("A")
-g.addVertex("B")
-g.addVertex("C")
-g.addVertex("D")
-g.addVertex("E")
-g.addVertex("F")
-
-
-g.addEdge("A", "B")
-g.addEdge("A", "C")
-g.addEdge("B","D")
-g.addEdge("C","E")
-g.addEdge("D","E")
-g.addEdge("D","F")
-g.addEdge("E","F")
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B','D');
+    graph.addEdge('C','E');
+    graph.addEdge('D','E');
+    graph.addEdge('D','F');
+    graph.addEdge('E','F');
+}
 
 //          A
 //        /   \
