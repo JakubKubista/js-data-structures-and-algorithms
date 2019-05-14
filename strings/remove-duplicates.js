@@ -19,6 +19,7 @@ function removeDuplicates(str) {
     }
     return newStr;
 }
+
 function testRemoveDuplicates() {
     let expected = 'geksfor';
     let str = "geeksforgeeks";
