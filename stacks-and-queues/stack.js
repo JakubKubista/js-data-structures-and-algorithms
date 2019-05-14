@@ -31,4 +31,19 @@ class Stack {
         }
         return ++this.size;
     }
+
+    pop() {
+        if (!this.first) return null;
+        let temp = this.first;
+        
+        // check if stack has just one node
+        if (this.first === this.last) {
+            this.last = null;
+        }
+
+        this.first = this.first.next;
+        this.size--;
+
+        return temp.value;
+    }
 }
