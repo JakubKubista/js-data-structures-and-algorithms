@@ -13,7 +13,7 @@ class Node {
     }
 }
 
-class BinarySearchTree  {
+class BinarySearchTree {
     constructor(root) {
         this.root = root;
     }
@@ -79,7 +79,7 @@ function testBST() {
     root.left.right = new Node(8);
 
     root.right = new Node(15);
-    root.right.left = new Node(9); // switch into 12 and it will works
+    root.right.left = new Node(9); // switch into 12 and it will be BST
     root.right.right = new Node(17);
 
     let BST = new BinarySearchTree(root)
