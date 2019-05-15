@@ -2,7 +2,7 @@
 
 /**
  * Data structure: Binary tree
- * Connect all the adjacent nodes at same level.
+ * Task: Connect all the adjacent nodes at same level.
  * Time Complexity: Average - O(log(n)) | Worst - O(n)
  * Source: https://www.geeksforgeeks.org/connect-nodes-at-same-level/
  */

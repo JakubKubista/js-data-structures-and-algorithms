@@ -1,7 +1,8 @@
 "use strict";
 
 /**
- * Clone a doubly linked list with next and random pointer.
+ * Data structure: Doubly linked list
+ * Task: Clone a list with next and random pointer.
  * Time Complexity: O(n)
  * Source: https://practice.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1
  */

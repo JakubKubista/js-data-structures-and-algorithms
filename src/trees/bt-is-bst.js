@@ -2,7 +2,7 @@
 
 /**
  * Data structure: Binary Search Tree
- * Question: Check if a Binary Tree is BST or not.
+ * Task: Check if a Binary Tree is BST or not.
  * Time Complexity: Average - O(log(n)) | Worst - O(n)
  * Source: https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
  */

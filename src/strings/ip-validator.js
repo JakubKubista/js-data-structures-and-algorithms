@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Check if is a string valid IP address.
+ * Task: Check if is a string valid IP address.
  * Source: https://www.w3resource.com/javascript/form/ip-address-validation.php
  * Time Complexity: O(1)
  * @param {string} str

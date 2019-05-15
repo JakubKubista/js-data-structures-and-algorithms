@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Returns string without duplicates of characters.
+ * Task: Returns string without duplicates of characters.
  * Fast way to implement, but not the best way.
  * Better way is to use SET, self balanging BST or Hash table
  * Time Complexity: O(n*n)

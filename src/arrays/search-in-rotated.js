@@ -1,7 +1,8 @@
 "use strict"
 
 /**
- * Search an element in a sorted and rotated array.
+ * Data structure: Array
+ * Task: Search an element in a sorted and rotated array.
  * Time Complexity: O(log n)
  * Source: https://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
  */

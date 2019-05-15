@@ -1,7 +1,7 @@
 "use strict";
 
 /**
- * Check if is a string palindrome.
+ * Task: Check if is a string palindrome.
  * Time Complexity: O(n / 2)
  * @param {string} str
  */
