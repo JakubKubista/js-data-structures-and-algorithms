@@ -21,7 +21,6 @@ class BinarySearchTree {
 
         // Aditional pointers.
         this.first = null;
-        this.middle = null;
         this.last = null;
         this.prev = null;
     }
@@ -59,7 +58,7 @@ class BinarySearchTree {
                 // Mark nodes.
                 if (this.isEmpty(this.first)) {
                     this.first = this.prev;
-                    this.middle = root;
+                    this.last = root;
                 } else {
                     this.last = root;
                 }
@@ -82,25 +81,22 @@ class BinarySearchTree {
             let temp = this.first.data;
             this.first.data = this.last.data;
             this.last.data = temp;
-        } else if (!this.isEmpty(this.first) && !this.isEmpty(this.middle)) {
-            let temp = this.first.data;
-            this.first.data = this.middle.data;
-            this.middle.data = temp;
         }
     }
 }
 
 function test() {
+    const EXPECTED_VALUE = 20;
     let root = new Node(10);
 
     root.left = new Node(5);
     root.left.left = new Node(2);
     root.left.right = new Node(20);
-
     root.right = new Node(8);
 
     let BST = new BinarySearchTree(root);
     BST.swapNodes();
     console.log(BST);
+    console.log(root.right.data === EXPECTED_VALUE)
 }
 test();
