@@ -2,7 +2,7 @@
 
 /**
  * Sock Merchant
- * Source: https://www.hackerrank.com/challenges/sock-merchant/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
+ * Source: https://www.hackerrank.com/challenges/sock-merchant/
  *
  * Complete the sockMerchant function in the editor below. It must return an integer representing the number of matching pairs of socks that are available.
  * sockMerchant has the following parameter(s):
@@ -10,7 +10,6 @@
  * ar: the colors of each sock
  */
 
-// Complete the sockMerchant function below.
 function sockMerchant(n, ar) {
     let pairs = new Map();
     let total = 0;
