@@ -1,0 +1,52 @@
+<div class="avatar" class="Jan Novak"></div>
+
+<script>
+    "use strict"
+
+    /**
+    * Create Avatar with img or initials
+    * Microsoft (Oslo) test
+    */
+
+    class Avatar {
+        constructor(name, src) {
+            this.name = name;
+            this.src = src;
+            this.colours = ["#eee", "#ee11ee", "11eeee", "eeee11", "228822", "882288", "999999", "666666", "777777", "99dd66"]
+        }
+
+        getInitials() {
+            let nameSplit = this.name.split(" ");
+            let initials = nameSplit[0].charAt(0).toUpperCase() + nameSplit[1].charAt(0).toUpperCase();
+
+            return initials;
+        }
+
+        getRandomColor() {
+            return this.colours[Math.floor(Math.random() * 10)];
+        }
+
+    }
+
+    function fillAvatar(name, src) {
+        let avatarDiv = document.getElementsByClassName(name);
+        let avatar = new Avatar(name);
+
+        if (src) {
+            avatarDiv.style(`background: url('${src}')`);
+        } else {
+            avatarDiv.innerHtml(avatar.getInitials());
+            avatarDiv.style(`background-color: ${avatar.getRandomColor()}`);
+        }
+    }
+</script>
+
+
+<style>
+    .avatar {
+        widht: 50px;
+        height: 50px;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+</style>
