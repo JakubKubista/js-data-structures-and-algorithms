@@ -2,14 +2,12 @@
 
 /**
  * Pattern: Frequency Counter
- * Task: Check equality of strings.
  * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/lecture/9816154
- *
- * Given two strings, write a function to determine if the second string is an
+ * Description: Given two strings, write a function to determine if the second string is an
  * anagram of the first. An anagram is a word, phrase, or name formed by
  * rearranging the letters of another, such as cinema, formed from iceman.
  *
- * Try to compare two strings regardless of order.
+ * Task: Check equality of strings. Try to compare two strings regardless of order.
  */
 
 function validAnagram(str1, str2){

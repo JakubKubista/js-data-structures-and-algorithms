@@ -2,16 +2,15 @@
 
 /**
  * Pattern: Frequency Counter
- * Task: Check equality of arrays.
  * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/lecture/9816154
- *
- * This pattern uses objects or sets to collect values/frequencies of values.
+ * Description:  This pattern uses objects or sets to collect values/frequencies of values.
  * This can often avoid the need for nested loops or O(N^2) operations with arrays / strings.
  *
+ * Task: Check equality of arrays.
  * Try to compare two arrays (the second one has multiples of the first).
  */
 
-function equalArrayMultiples(arr1, arr2) {
+function equalArrays(arr1, arr2) {
 
     if (arr1.length !== arr2.length) {
         return false;
@@ -38,4 +37,4 @@ function equalArrayMultiples(arr1, arr2) {
     return true;
 }
 
-equalArrayMultiples([1, 2, 3], [9, 1, 4]);
+equalArrays([1, 2, 3], [9, 1, 4]);
