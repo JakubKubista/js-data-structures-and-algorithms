@@ -13,21 +13,23 @@
  */
 
 function countUniqueValues(arr) {
-    let left = 0;
-    let right = arr.length - 1;
-    let uniques = [];
     let count = 0;
-    while (left < right) {
-        if (!uniques[arr[left]]) {
-            uniques[arr[left]] = true;
+    // Approach 1 - video
+    /*
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[count] !== arr[i]) {
+            count++;
+            arr[count] = arr[i];
+        }
+    }
+    return count + 1;
+    */
+
+    // Approach 2 - my own
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i-1]) {
             count++;
         }
-        if (!uniques[arr[right]]) {
-            uniques[arr[right]] = true;
-            count++;
-        }
-        left++;
-        right--;
     }
     return count;
 }
