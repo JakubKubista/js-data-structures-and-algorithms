@@ -2,7 +2,7 @@
 
 /**
  * Pattern: Frequency Counter
- * Task: Check equality of arrays.
+ * Task: Check equality of strings.
  * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/lecture/9816154
  *
  * Given two strings, write a function to determine if the second string is an
