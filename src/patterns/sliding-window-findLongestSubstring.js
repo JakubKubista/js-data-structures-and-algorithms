@@ -12,23 +12,20 @@
  */
 
 function findLongestSubstring(str){
-  let j = 0;
-  let max = 0;
-  let tmp = {};
-  for (let i = 0; i < str.length; i++) {
-      if (tmp[str[i]]) {
-          tmp = {};
-          j = 0;
-      }
+  let longest = 0;
+  let seen = {};
+  let start = 0; // beginning of substring
+  let index = 0;
 
-      j++;
-      tmp[str[i]] = true;
-
-      if (j > max) {
-          max = j;
-      }
+  for (let val of str) {
+    index++;
+    if (seen[val]) {
+      start = Math.max(start, seen[val]);
+    }
+    longest = Math.max(longest, index - start + 1);
+    seen[val] = index + 1; // do not double count
   }
-  return max;
+  return longest;
 }
 
 findLongestSubstring('') // 0
