@@ -52,3 +52,9 @@ function countUniqueValuesNoOrder(arr) {
 }
 
 countUniqueValuesNoOrder([3,4,3,3,2,2,6,1,5,1]); // 6
+
+function countUniqueValuesOneLine(arr) {
+    return new Set(arr).size;
+}
+
+countUniqueValuesOneLine([3,4,3,3,2,2,6,1,5,1]); // 6
