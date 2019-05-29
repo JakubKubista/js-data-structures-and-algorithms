@@ -16,15 +16,14 @@ function collectOddValues(arr) {
       return;
     }
 
-    if (helperInput[helperInput.length-1] % 2 !== 0) {
-      result.unshift(helperInput[helperInput.length-1]);
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0]);
     }
-    helperInput.pop();
-    helper(helperInput);
+    helper(helperInput.slice(1));
   }
   helper(arr);
 
-  return result;;
+  return result;
 }
 
 collectOddValues([1,2,3,4,5,6,7,8,9]);
