@@ -12,6 +12,10 @@ function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
+function reverseStringES6(str) {
+    return [...str].reverse().join('');
+}
+
 /**
  * Returns reversed individuals words
  * Time Complexity: O(n)
@@ -27,3 +31,7 @@ function testReverse() {
     console.log(reverseString("Some sample data"));
     console.log(reverseWords("Some sample data"));
 }
+
+/**
+ * Another approaches: for loop, recursion, reduce(), ternary operator
+ */
