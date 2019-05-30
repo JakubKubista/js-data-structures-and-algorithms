@@ -2,16 +2,20 @@
 
 /**
  * Factorial
- * Time Complexity: O(1)
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
  */
 
-function Factorial(num) {
+function factorial(num) {
     if (num === 0) return 1;
     return num * Factorial(num - 1);
 }
-
-function test() {
-    console.log("Factorial: 5");
-    console.log(Factorial(5));
+function factorialLoop(num) {
+    let total = 1;
+    for (let i = num; i > 0; i--) {
+        total *= i;
+    }
+    return total;
 }
-test()
+
+console.log(120 === factorial(5));
