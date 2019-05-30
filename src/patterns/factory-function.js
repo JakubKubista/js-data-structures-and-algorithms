@@ -1,6 +1,7 @@
 /**
  * Pattern: Factory function
- * It is possible to use factory function instead of Classes,
+ * Source: https://www.youtube.com/watch?v=ImwrezYhw4w
+ * Description: It is possible to use factory function instead of Classes,
  * because DOM does not reffer on created instance (for e. g. in click function)
  * and it is shorter and still readable (to call correct instance).
  */
