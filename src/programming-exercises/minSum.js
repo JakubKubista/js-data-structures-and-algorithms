@@ -64,14 +64,20 @@ function minSum(num, k) {
   // Sort an array to reach less complexity.
   num.sort(function(a, b){return a - b});
   while (k > 0) {
-      if (i === 0 || i === num.length) {
-          num.sort(function(a, b){return a - b});
-          i = num.length;
+    // Hadle if array has only one value.
+      if(num.length < 2) {
+          num[0] = Math.round(num[0]/2);
+      } else {
+
+        if (i === 0 || i === num.length) {
+            num.sort(function(a, b){return a - b});
+            i = num.length;
+        }
+        // Search the biggest node at the end.
+        node = findInsertNode(num);
+        num.pop();
+        num.splice(node.index, 0, node.value);
       }
-      // Search the biggest node at the end.
-      node = findInsertNode(num);
-      num.pop();
-      num.splice(node.index, 0, node.value);
       --k;
       --i;
   }
@@ -104,7 +110,7 @@ let num = [10,20,7,5,7,8,9,1,0,2,1,4,5,7,4,5,6,8,7,
   6846,848,10,20,7,5,7,8,9,1,0,2,1,4,5,7,4,5,6,8,7,41,245,
   6548,215,354, 5, 8489, 6846, 648864, 86468, 684684,864,
   864 ,684 ,684,684,684,6846,848];
-let k = 10000000;
+let k = 10000;
 
 console.log(num);
 function runPerformanceTest() {
