@@ -7,6 +7,15 @@
 
 // First brute force ES5 solution
 
+function validate(num, k) {
+  if (num.length < 1 || num.length > 100000) return false;
+  for (let value of num) {
+    if (value < 1 || value > 10000) return false;
+  }
+  if (k < 1 || k > 10000000) return false;
+  if (k < 1 || k > 10000000) return false;
+  return true;
+}
 
 // Time Complexity: O(n*n)
 function minSumES5(num, k) {
