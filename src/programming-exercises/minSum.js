@@ -73,6 +73,9 @@ function minSum(num, k) {
   // Sort an array to reach less complexity.
   num.sort(function(a, b){return a - b});
   while (k > 0) {
+      if (!validate(num, k)) {
+          return -1;
+      }
     // Hadle if array has only one value.
       if(num.length < 2) {
           num[0] = Math.round(num[0]/2);
