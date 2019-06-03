@@ -39,7 +39,8 @@ function flatten(oldArr) {
  * @param {array} arr
  */
 function flattenDeep(arr) {
-    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+    return arr.reduce((acc, val) => Array.isArray(val) ?
+        acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }
 
 function test() {
@@ -49,3 +50,4 @@ function test() {
     console.log(flatten(arr));
     console.log(flattenDeep(arr));
 }
+test();
