@@ -2,7 +2,7 @@
 
 /**
  * Task: Check if is a string palindrome.
- * Time Complexity: O(n / 2)
+ * Time Complexity: O(n)
  * @param {string} str
  */
 
