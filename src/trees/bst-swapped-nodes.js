@@ -56,12 +56,8 @@ class BinarySearchTree {
             if (this.nodeIsGreater(root, this.prev)) {
 
                 // Mark nodes.
-                if (this.isEmpty(this.first)) {
-                    this.first = this.prev;
-                    this.last = root;
-                } else {
-                    this.last = root;
-                }
+                if (this.isEmpty(this.first)) this.first = this.prev;
+                this.last = root;
             }
             this.prev = root;
             this.findNodes(root.right);
