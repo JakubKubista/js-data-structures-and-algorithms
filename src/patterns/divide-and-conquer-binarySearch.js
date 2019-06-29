@@ -6,6 +6,7 @@
  * Description: This pattern involves dividing a data set into smaller
  * chunks and then repeating a process with a subset of data.
  * This pattern can tremendously decrease time complexity.
+ * Time Complexity - O(log n)
  *
  * Task: Given a sorted array of integers, write a function called search (binary),
  * that accepts a value and returns the index where the value passed to the
