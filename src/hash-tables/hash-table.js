@@ -2,7 +2,7 @@
 
 /**
  * Hash Table
- * Time Complexity: O(1)
+ * Time Complexity: O(1) - insert, deletion, access
  * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/lecture/8344072#content
  */
 
@@ -12,62 +12,49 @@ class HashTable {
   }
 
   _hash(key) {
-    let total = 0;
-    let WEIRD_PRIME = 31;
+    let hash = 0;
+    const VALUE_PRIME = 96
+    const HASH_PRIME = 30
     for (let i = 0; i < Math.min(key.length, 100); i++) {
-      let char = key[i];
-      let value = char.charCodeAt(0) - 96
-      total = (total * WEIRD_PRIME + value) % this.keyMap.length;
+      let value = key[i].charCodeAt(0) - VALUE_PRIME
+      hash = (hash * HASH_PRIME + value) % this.keyMap.length;
     }
-    return total;
+    return hash;
   }
 
   set(key,value){
-    let index = this._hash(key);
-    if(!this.keyMap[index]){
-      this.keyMap[index] = [];
-    }
-    this.keyMap[index].push([key, value]);
+    let i = this._hash(key);
+    if (!this.keyMap[i]) this.keyMap[i] = [];
+    this.keyMap[i].push([key, value]);
   }
 
   get(key){
-    let index = this._hash(key);
-    if(this.keyMap[index]){
-      for(let i = 0; i < this.keyMap[index].length; i++){
-        if(this.keyMap[index][i][0] === key) {
-          return this.keyMap[index][i][1]
-        }
-      }
+    let i = this._hash(key);
+    if (!this.keyMap[i]) return undefined
+    for (let j = 0; j < this.keyMap[i].length; j++) {
+        if (this.keyMap[i][j][0] === key) return this.keyMap[i][j][1];
     }
-    return undefined;
+    return undefined
   }
 
   keys(){
-    let keysArr = [];
-    for(let i = 0; i < this.keyMap.length; i++){
-      if(this.keyMap[i]){
-        for(let j = 0; j < this.keyMap[i].length; j++){
-          if(!keysArr.includes(this.keyMap[i][j][0])){
-            keysArr.push(this.keyMap[i][j][0])
-          }
-        }
-      }
-    }
-    return keysArr;
+    let keys = [];
+    this.keyMap.forEach(pairs => {
+        pairs.forEach(pair => {
+            keys.push(pair[0]);
+        });
+    });
+    return keys;
   }
 
   values(){
-    let valuesArr = [];
-    for(let i = 0; i < this.keyMap.length; i++){
-      if(this.keyMap[i]){
-        for(let j = 0; j < this.keyMap[i].length; j++){
-          if(!valuesArr.includes(this.keyMap[i][j][1])){
-            valuesArr.push(this.keyMap[i][j][1])
-          }
-        }
-      }
-    }
-    return valuesArr;
+    let values = [];
+    this.keyMap.forEach(pairs => {
+        pairs.forEach(pair => {
+          values.push(pair[1]);
+        });
+    });
+    return values;
   }
 }
 
