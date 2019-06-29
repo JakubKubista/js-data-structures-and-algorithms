@@ -1,9 +1,11 @@
 "use strict"
 
 /**
- * Binary Search Tree Exercise - Find 2nd largest node
+ * Binary Search Tree Exercise - Check if balanced
  * Time Complexity: O(log n)
- * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/quiz/4413078
+ * Source: https://www.udemy.com/js-algorithms-and-data-structures-masterclass/learn/quiz/4413080
+ * Description: A balanced tree is defined as a tree where the depth
+ * of all leaf nodes or nodes with single children differ by no more than one.
  */
 
 class Node {
