@@ -80,8 +80,7 @@ class Node {
           return helper(root.left) &&
               helper(root.right);
       }
-      second = helper(this.root);
-      return second;
+      return helper(this.root);
     }
   }
 
