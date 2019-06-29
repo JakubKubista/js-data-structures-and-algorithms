@@ -64,21 +64,20 @@ class BinarySearchTree {
         } else return "Please insert a number";
     }
 
-    findSecondLargest() {
-        if (this.root === null) return "Tree is empty";
-        let max = Number.MIN_SAFE_INTEGER;
-        let second = Number.MIN_SAFE_INTEGER;
-
-        function helper(root) {
-            if (root === null) return second;
-            if (root.value > max) {
-                second = max;
-                max = root.value;
-            }
-            return helper(root.left) &&
-                helper(root.right);
-        }
-        return helper(this.root);
+    isBalanced() {
+      if (this.root === null) return "Tree is empty";
+      function helper(root) {
+          if (root === null) return 0;
+          let leftHeight = helper(root.left);
+          let rightHeight = helper(root.right);
+          // not balanced if left or right subtree is not balanced
+          if (leftHeight === -1 || rightHeight === -1) return -1;
+          // not balanced if the diffrence in heights is greater than 1
+          if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+          // is balanced, co return height
+          return Math.max(leftHeight, rightHeight) + 1;
+      }
+      return helper(this.root) > -1;
     }
 }
 
@@ -95,6 +94,14 @@ function test() {
     bst.root.left.right.value // 12
     bst.root.right.value // 20
 
-    console.log(bst.findSecondLargest());
+    console.log(bst.isBalanced()); // ture
+
+    let bst2 = new BinarySearchTree();
+
+    bst2.insert(5);
+    bst2.insert(6);
+    console.log(bst2.isBalanced()); // ture
+    bst2.insert(7);
+    console.log(bst2.isBalanced()); // false
 }
 test();
