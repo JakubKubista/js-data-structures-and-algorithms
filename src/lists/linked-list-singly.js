@@ -130,6 +130,26 @@ class LinkedList {
     deleteList() {
         this.head = null;
     }
+
+    getMiddle() {
+        if (!this.head) {
+            return null;
+        }
+
+        if (!this.head.next) {
+            return this.head;
+        }
+
+        let slow = this.head;
+        let fast = this.head;
+
+        while (fast !== null && fast.next !== null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
 }
 
 function testLinkedList() {
@@ -138,6 +158,15 @@ function testLinkedList() {
     list.insertAtBeginning(3);
     list.insertAtEnd(2);
     list.insertAt(5, 2);
+    list.insertAtEnd(3);
+    list.insertAtEnd(12);
+    list.insertAtEnd(4);
+    list.insertAtEnd(3);
+    list.insertAtEnd(1);
+    list.insertAtEnd(4);
+    list.insertAtEnd(4);
+    console.log(list);
+    console.log(list.getMiddle());
     list.deleteAt(1);
     list.deleteLastNode();
     console.log(list.getAt(0));
