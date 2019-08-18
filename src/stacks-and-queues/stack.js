@@ -35,7 +35,7 @@ class Stack {
     pop() {
         if (!this.first) return null;
         let temp = this.first;
-        
+
         // check if stack has just one node
         if (this.first === this.last) {
             this.last = null;
