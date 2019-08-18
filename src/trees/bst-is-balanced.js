@@ -67,19 +67,19 @@ class BinarySearchTree {
     }
 
     isBalanced() {
-      if (this.root === null) return "Tree is empty";
-      function helper(root) {
-          if (root === null) return 0;
-          let leftHeight = helper(root.left);
-          let rightHeight = helper(root.right);
-          // not balanced if left or right subtree is not balanced
-          if (leftHeight === -1 || rightHeight === -1) return -1;
-          // not balanced if the diffrence in heights is greater than 1
-          if (Math.abs(leftHeight - rightHeight) > 1) return -1;
-          // is balanced, co return height
-          return Math.max(leftHeight, rightHeight) + 1;
-      }
-      return helper(this.root) > -1;
+        if (this.root === null) return "Tree is empty";
+        function helper(root) {
+            if (root === null) return 0;
+            let leftHeight = helper(root.left);
+            let rightHeight = helper(root.right);
+            // not balanced if left or right subtree is not balanced
+            if (leftHeight === -1 || rightHeight === -1) return -1;
+            // not balanced if the diffrence in heights is greater than 1
+            if (Math.abs(leftHeight - rightHeight) > 1) return -1;
+            // is balanced, co return height
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
+        return helper(this.root) > -1;
     }
 }
 

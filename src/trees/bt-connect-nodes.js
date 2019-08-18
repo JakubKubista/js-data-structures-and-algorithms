@@ -33,8 +33,7 @@ class BinaryTree {
      * Reset next right before connectRecur.
      * @param {Node} node
      */
-    connect(node)
-    {
+    connect(node) {
         // Set next right for root.
         node.nextRight = null;
 
@@ -46,7 +45,7 @@ class BinaryTree {
      * @param {Node} node
      */
     connectRecur(node) {
-        if (this.isEmpty(node)){
+        if (this.isEmpty(node)) {
             return;
         }
 
@@ -60,7 +59,7 @@ class BinaryTree {
         // then next right will be null.
         if (!this.isEmpty(node.right)) {
             node.right.nextRight = (node.nextRight != null) ?
-            node.nextRight.left : null;
+                node.nextRight.left : null;
         }
 
         // Set next right for other nodes in pre order.
